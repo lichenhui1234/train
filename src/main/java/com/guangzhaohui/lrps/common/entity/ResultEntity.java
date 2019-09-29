@@ -1,4 +1,4 @@
-package com.guangzhaohui.lrps.common;
+package com.guangzhaohui.lrps.common.entity;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
@@ -26,5 +26,9 @@ public class ResultEntity<T> {
 
     public static ResultEntity failResult(String message) {
         return new ResultEntity(false, message, null);
+    }
+
+    public static <T> ResultEntity failDataResult(T data) {
+        return new ResultEntity(false, null, data);
     }
 }

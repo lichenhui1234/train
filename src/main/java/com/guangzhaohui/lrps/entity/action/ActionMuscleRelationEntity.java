@@ -1,4 +1,4 @@
-package com.guangzhaohui.lrps.entity;
+package com.guangzhaohui.lrps.entity.action;
 
 import lombok.Data;
 
@@ -11,21 +11,21 @@ import java.util.Date;
 
 
 /**
- * 锻炼动作
+ * 锻炼所涉及的肌肉的关系表
  * @author 李晨辉
  * @date 2019-09-16
  */
 @Data
 @Entity
-@Table(name = "action")
-public class ActionEntity {
+@Table(name = "action_muscle_relation")
+public class ActionMuscleRelationEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private Date gmtCreate;
     private Date gmtModifed;
     private Integer status;
-    private String name;
-    private String description;
+    private Integer muscleId;
+    private Integer actionId;
 
 }

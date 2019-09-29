@@ -1,6 +1,6 @@
 package com.guangzhaohui.lrps.service;
 
-import com.guangzhaohui.lrps.entity.MuscleEntity;
+import com.guangzhaohui.lrps.entity.muscle.MuscleEntity;
 import com.guangzhaohui.lrps.mapper.MuscleDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

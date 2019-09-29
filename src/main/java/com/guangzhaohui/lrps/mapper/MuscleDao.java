@@ -1,6 +1,6 @@
 package com.guangzhaohui.lrps.mapper;
 
-import com.guangzhaohui.lrps.entity.MuscleEntity;
+import com.guangzhaohui.lrps.entity.muscle.MuscleEntity;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
 /**
