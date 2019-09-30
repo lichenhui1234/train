@@ -95,7 +95,7 @@
                     </excludes>
                     <archive>
                         <manifestEntries>
-                            <!--MANIFEST.MF 中 Class-Path-->
+                            <!--MANIFEST.MF 中 Class-Path, 用来应用外部文件(例如配置文件)-->
                             <Class-Path>./config/</Class-Path>
                         </manifestEntries>
                     </archive>
@@ -112,9 +112,11 @@
                             <goal>copy-resources</goal>
                         </goals>
                         <configuration>
+                            <!-- 生成外部文件的地址 -->
                             <outputDirectory>
                                 ${project.build.directory}/config/
                             </outputDirectory>
+                            <!-- 生成外部文件的来源 -->
                             <resources>
                                 <resource>
                                     <directory>src/main/resources/config/</directory>
@@ -129,10 +131,6 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <!--使用外部配置文件，jar包里没有资源文件-->
-                    <addResources>true</addResources>
-                </configuration>
             </plugin>
 
 
