@@ -1,6 +1,7 @@
 package com.guangzhaohui.lrps.web.controller;
 
 import com.guangzhaohui.lrps.common.entity.ResultEntity;
+import com.guangzhaohui.lrps.dto.muscle.MuscleDTO;
 import com.guangzhaohui.lrps.entity.muscle.MuscleEntity;
 import com.guangzhaohui.lrps.service.MuscleService;
 import io.swagger.annotations.Api;
@@ -30,10 +31,10 @@ public class MuscleController {
 
     @PostMapping("/muscle/add")
     @ApiOperation(value = "添加肌肉")
-    public ResultEntity<MuscleEntity> insertMuscle(@Valid @RequestBody MuscleEntity entity, BindingResult bindingResult) {
+    public ResultEntity insertMuscle(@Valid @RequestBody MuscleDTO muscleDTO, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             return ResultEntity.failResult(bindingResult.getFieldError().getDefaultMessage());
         }
-        return ResultEntity.successResult(muscleService.insert(entity));
+        return ResultEntity.successResult(muscleService.insert(muscleDTO));
     }
 }

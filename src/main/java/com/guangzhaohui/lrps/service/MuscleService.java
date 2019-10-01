@@ -1,5 +1,7 @@
 package com.guangzhaohui.lrps.service;
 
+import com.guangzhaohui.lrps.dto.muscle.MuscleDTO;
+import com.guangzhaohui.lrps.dtoconvert.MuscleConvert;
 import com.guangzhaohui.lrps.entity.muscle.MuscleEntity;
 import com.guangzhaohui.lrps.mapper.MuscleDao;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,8 +16,10 @@ public class MuscleService {
     @Autowired
     private MuscleDao muscleDao;
 
-    public MuscleEntity insert(MuscleEntity entity) {
-        return muscleDao.save(entity);
+    public Integer insert(MuscleDTO muscleDTO) {
+        MuscleEntity entity = MuscleConvert.INSTANCE.muscleToEntity(muscleDTO);
+        MuscleEntity save = muscleDao.save(entity);
+        return save.getId();
     }
 
 }

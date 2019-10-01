@@ -17,6 +17,7 @@ spring:
       minEvictableIdleTimeMillis: 30000 #配置一个连接在池中最小生存的时间，单位是毫秒
   jpa:
 #    show-sql: true
+    open-in-view=false:
     hibernate:
       ddl-auto: update
       naming:

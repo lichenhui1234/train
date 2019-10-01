@@ -18,9 +18,9 @@ import java.util.List;
 public class ArgumentExceptionHandler {
 
     @ExceptionHandler(BindException.class)
-    public ResultEntity bindException(BindException e) {
+    public ResultEntity<List<String>> bindException(BindException e) {
         BindingResult bindingResult = e.getBindingResult();
-        List<String> errorList = new ArrayList<String>();
+        List<String> errorList = new ArrayList<>();
         for (ObjectError allError : bindingResult.getAllErrors()) {
             errorList.add(allError.getDefaultMessage());
         }

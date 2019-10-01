@@ -3,9 +3,6 @@ package com.guangzhaohui.lrps.dto.muscle;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
 
 
@@ -17,8 +14,6 @@ import javax.validation.constraints.NotBlank;
  */
 @Data
 public class MuscleDTO {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @ApiModelProperty(hidden = true)
     private Integer id;
     @NotBlank(message = "肌肉名称不能为空")
