@@ -12,6 +12,7 @@ import java.util.Date;
 
 /**
  * 锻炼所涉及的肌肉的关系表
+ *
  * @author 李晨辉
  * @date 2019-09-16
  */
@@ -27,5 +28,13 @@ public class ActionMuscleRelationEntity {
     private Integer status;
     private Integer muscleId;
     private Integer actionId;
+    /**
+     * 动作与肌肉的强弱关联,strong,weak
+     * fixme:出个枚举类
+     * 例如胸推,主练胸肌,顺带会练到肱三头肌
+     * 那么胸肌是强关联,肱三头肌是弱关联
+     */
+    private String relationship;
+
 
 }

@@ -20,7 +20,7 @@ public class ResultEntity<T> {
     private String message;
     private T data;
 
-    public static <T> ResultEntity successResult(T data) {
+    public static <T> ResultEntity<T> successResult(T data) {
         return new ResultEntity(true, null, data);
     }
 
@@ -28,7 +28,7 @@ public class ResultEntity<T> {
         return new ResultEntity(false, message, null);
     }
 
-    public static <T> ResultEntity failDataResult(T data) {
+    public static <T> ResultEntity<T> failDataResult(T data) {
         return new ResultEntity(false, null, data);
     }
 }

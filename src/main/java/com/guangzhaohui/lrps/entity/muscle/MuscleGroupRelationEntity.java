@@ -24,5 +24,4 @@ public class MuscleGroupRelationEntity {
     private Integer id;
     private Integer muscleId;
     private Integer groupId;
-
 }

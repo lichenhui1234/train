@@ -27,5 +27,7 @@ public class ActionEntity {
     private Integer status;
     private String name;
     private String description;
+    private String notice;
+    private String picUrl;
 
 }
