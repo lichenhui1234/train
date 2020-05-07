@@ -1,6 +1,10 @@
 server:
-  port: 8887
+  port: 8087
 spring:
+  data:
+    mongodb:
+#      uri: mongodb://zywl:Zywl2018@172.16.1.115:27017/testdb
+      uri: mongodb://47.105.182.253:27017/test
   datasource:
     druid:
       url: jdbc:mysql://127.0.0.1:3306/train?characterEncoding=utf-8
@@ -19,10 +23,22 @@ spring:
 #    show-sql: true
     open-in-view=false:
     hibernate:
-      ddl-auto: update
+      ddl-auto: create
+#      ddl-auto: create-drop
       naming:
-        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+#        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl #无命名修改
+        physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+    database-platform: org.hibernate.dialect.MySQL57Dialect
+
   thymeleaf:
     cache: false
 #    generate-ddl: true
+
+#management:
+#  endpoint:
+#    web:
+#     exposure:
+#       include: "*"
+
+
 
